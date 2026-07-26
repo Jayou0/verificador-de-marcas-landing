@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificador de Marcas — Verifica tu marca antes de registrarla en Perú</title>
+  <meta name="description" content="Servicio profesional de verificación de disponibilidad de marcas en el registro de INDECOPI. Evita rechazos y conflictos legales.">
+  <meta name="keywords" content="verificar marca, registro marca Perú, INDECOPI, propiedad intelectual, marca comercial">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e40af;
+      --primary-dark: #1e3a8a;
+      --accent: #f59e0b;
+      --text: #1f2937;
+      --text-light: #6b7280;
+      --bg: #ffffff;
+      --bg-alt: #f8fafc;
+      --border: #e5e7eb;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text); line-height: 1.6; background: var(--bg); }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* Header */
+    header { background: var(--bg); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+    .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.25rem; color: var(--primary); text-decoration: none; }
+    .logo-icon { width: 32px; height: 32px; background: var(--primary); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: var(--text-light); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--primary); }
+    .nav-cta { background: var(--primary); color: white; padding: 10px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 0.9rem; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--primary-dark); }
+
+    /* Hero */
+    .hero { padding: 100px 0 80px; background: linear-gradient(180deg, #eff6ff 0%, var(--bg) 100%); text-align: center; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(30,64,175,0.08); color: var(--primary); padding: 8px 16px; border-radius: 100px; font-size: 0.85rem; font-weight: 600; margin-bottom: 24px; }
+    .hero-badge::before { content: ""; width: 8px; height: 8px; background: #22c55e; border-radius: 50%; display: inline-block; }
+    .hero h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 24px; letter-spacing: -0.02em; }
+    .hero h1 span { color: var(--primary); }
+    .hero p { font-size: 1.25rem; color: var(--text-light); max-width: 600px; margin: 0 auto 40px; }
+    .hero-cta { display: inline-flex; gap: 16px; }
+    .btn-primary { background: var(--primary); color: white; padding: 16px 32px; border-radius: 12px; font-weight: 700; font-size: 1rem; text-decoration: none; border: none; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 14px rgba(30,64,175,0.25); }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(30,64,175,0.3); }
+    .btn-secondary { background: white; color: var(--text); padding: 16px 32px; border-radius: 12px; font-weight: 600; font-size: 1rem; text-decoration: none; border: 2px solid var(--border); transition: all 0.2s; }
+    .btn-secondary:hover { border-color: var(--primary); color: var(--primary); }
+    .hero-trust { margin-top: 60px; display: flex; align-items: center; justify-content: center; gap: 40px; color: var(--text-light); font-size: 0.875rem; }
+    .hero-trust span { display: flex; align-items: center; gap: 8px; }
+    .hero-trust svg { width: 20px; height: 20px; color: #22c55e; }
+
+    /* Features */
+    .features { padding: 80px 0; }
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-header h2 { font-size: 2.25rem; font-weight: 800; margin-bottom: 12px; }
+    .section-header p { color: var(--text-light); font-size: 1.1rem; }
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .feature-card { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 16px; padding: 32px; transition: all 0.3s; }
+    .feature-card:hover { box-shadow: 0 10px 40px rgba(0,0,0,0.08); transform: translateY(-4px); border-color: transparent; }
+    .feature-icon { width: 48px; height: 48px; background: var(--primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .feature-icon svg { width: 24px; height: 24px; color: white; }
+    .feature-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 10px; }
+    .feature-card p { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; }
+
+    /* How it works */
+    .how-it-works { padding: 80px 0; background: var(--bg-alt); }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 48px; }
+    .step { text-align: center; position: relative; }
+    .step:not(:last-child)::after { content: "→"; position: absolute; right: -20px; top: 30px; color: var(--border); font-size: 1.5rem; font-weight: 300; }
+    .step-num { width: 64px; height: 64px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; margin: 0 auto 20px; }
+    .step h4 { font-weight: 700; margin-bottom: 8px; }
+    .step p { color: var(--text-light); font-size: 0.9rem; }
+
+    /* Pricing */
+    .pricing { padding: 80px 0; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; max-width: 800px; margin: 48px auto 0; }
+    .pricing-card { border: 2px solid var(--border); border-radius: 20px; padding: 40px; position: relative; }
+    .pricing-card.featured { border-color: var(--primary); background: linear-gradient(180deg, rgba(30,64,175,0.03) 0%, var(--bg) 100%); }
+    .pricing-badge { position: absolute; top: -12px; right: 24px; background: var(--accent); color: white; padding: 6px 16px; border-radius: 100px; font-size: 0.8rem; font-weight: 700; }
+    .pricing-card h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 8px; }
+    .pricing-card .price { font-size: 3rem; font-weight: 800; color: var(--primary); margin: 16px 0; }
+    .pricing-card .price span { font-size: 1rem; color: var(--text-light); font-weight: 500; }
+    .pricing-card ul { list-style: none; margin: 24px 0; }
+    .pricing-card ul li { padding: 10px 0; display: flex; align-items: center; gap: 10px; color: var(--text-light); font-size: 0.95rem; }
+    .pricing-card ul li::before { content: "✓"; color: #22c55e; font-weight: 700; }
+
+    /* FAQ */
+    .faq { padding: 80px 0; background: var(--bg-alt); }
+    .faq-list { max-width: 700px; margin: 48px auto 0; }
+    .faq-item { border-bottom: 1px solid var(--border); padding: 24px 0; }
+    .faq-item h4 { font-weight: 700; font-size: 1.05rem; margin-bottom: 10px; display: flex; justify-content: space-between; cursor: pointer; }
+    .faq-item p { color: var(--text-light); font-size: 0.95rem; line-height: 1.7; }
+
+    /* Footer */
+    footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-light); font-size: 0.875rem; }
+    footer a { color: var(--primary); text-decoration: none; }
+    .disclaimer { max-width: 700px; margin: 24px auto 0; padding: 16px; background: #fef3c7; border-radius: 8px; font-size: 0.8rem; color: #92400e; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      .features-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; }
+      .step:not(:last-child)::after { display: none; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <a href="#" class="logo">
+          <div class="logo-icon">V</div>
+          Verificador de Marcas
+        </a>
+        <ul class="nav-links">
+          <li><a href="#como-funciona">Cómo funciona</a></li>
+          <li><a href="#precios">Precios</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <a href="#" class="nav-cta">Verificar mi marca</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">Servicio activo en Perú</div>
+      <h1>Verifica tu marca antes de <span>registrarla</span></h1>
+      <p>Consulta si tu nombre o marca ya está registrado en INDECOPI. Evita rechazos, ahorra tiempo y protege tu inversión desde el día uno.</p>
+      <div class="hero-cta">
+        <a href="#" class="btn-primary">Verificar mi marca — S/35</a>
+        <a href="#como-funciona" class="btn-secondary">Ver cómo funciona</a>
+      </div>
+      <div class="hero-trust">
+        <span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Búsqueda en INDECOPI</span>
+        <span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Análisis con IA</span>
+        <span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Reporte en minutos</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <div class="section-header">
+        <h2>¿Por qué verificar antes de registrar?</h2>
+        <p>El 40% de las solicitudes de marca son rechazadas por conflicto con marcas existentes. Un reporte previo te ahorra meses y cientos de soles.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
+          <h3>Búsqueda completa en INDECOPI</h3>
+          <p>Revisamos marcas idénticas, fonéticamente similares y visualmente parecidas en la clase de Niza que corresponde a tu rubro.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
+          <h3>Análisis de riesgo con IA</h3>
+          <p>Recibe un score de similitud y una explicación clara sobre qué tan riesgoso es registrar tu marca. Sin tecnicismos legales.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+          <h3>Reporte descargable</h3>
+          <p>Obtén un PDF con todos los resultados, el análisis de riesgo y recomendaciones para compartir con tu abogado o equipo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-it-works" id="como-funciona">
+    <div class="container">
+      <div class="section-header">
+        <h2>Así de simple</h2>
+        <p>Tu reporte de verificación en 4 pasos, sin salir de tu casa.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h4>Ingresa tu marca</h4>
+          <p>Escribe el nombre que quieres verificar y selecciona la clase de Niza de tu rubro.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h4>Realiza el pago</h4>
+          <p>Paga de forma segura con tarjeta de crédito o débito. Desde S/25.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h4>Consultamos INDECOPI</h4>
+          <p>Buscamos en el registro público marcas idénticas o similares en tu clase.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h4>Recibe tu reporte</h4>
+          <p>Descarga tu reporte con resultados, score de riesgo y recomendaciones.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing" id="precios">
+    <div class="container">
+      <div class="section-header">
+        <h2>Planes transparentes</h2>
+        <p>Paga solo por lo que necesitas. Sin suscripciones ni cargos ocultos.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Básico</h3>
+          <div class="price">S/25 <span>/ búsqueda</span></div>
+          <ul>
+            <li>Búsqueda por denominación</li>
+            <li>1 clase de Niza</li>
+            <li>Resultados en tabla</li>
+            <li>Estado de las marcas encontradas</li>
+          </ul>
+          <a href="#" class="btn-secondary" style="width:100%;display:block;text-align:center;">Elegir plan básico</a>
+        </div>
+        <div class="pricing-card featured">
+          <div class="pricing-badge">MÁS POPULAR</div>
+          <h3>Completo</h3>
+          <div class="price">S/35 <span>/ búsqueda</span></div>
+          <ul>
+            <li>Búsqueda por denominación + fonética</li>
+            <li>1 clase de Niza</li>
+            <li>Score de similitud con IA</li>
+            <li>Análisis de riesgo detallado</li>
+            <li>Reporte PDF descargable</li>
+            <li>Recomendaciones personalizadas</li>
+          </ul>
+          <a href="#" class="btn-primary" style="width:100%;display:block;text-align:center;">Elegir plan completo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2>Preguntas frecuentes</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h4>¿La información que consultan es oficial de INDECOPI? <span>+</span></h4>
+          <p>Sí. Consultamos directamente el Registro Público de Marcas mantenido por INDECOPI. Los resultados reflejan el estado actual del registro en el momento de la búsqueda.</p>
+        </div>
+        <div class="faq-item">
+          <h4>¿Este reporte me garantiza que mi marca será aceptada? <span>+</span></h4>
+          <p>No. Este servicio es una herramienta informativa que reduce el riesgo de conflicto, pero la decisión final de registro corresponde exclusivamente a INDECOPI. Te recomendamos siempre consultar con un abogado especializado en propiedad intelectual.</p>
+        </div>
+        <div class="faq-item">
+          <h4>¿Qué es la "clase de Niza"? <span>+</span></h4>
+          <p>La Clasificación de Niza divide todos los productos y servicios en 45 clases. INDECOPI exige que declares en qué clase(es) operará tu marca. Si no estás seguro, nuestro buscador te ayuda a identificar la correcta.</p>
+        </div>
+        <div class="faq-item">
+          <h4>¿Cuánto tardan en entregar el reporte? <span>+</span></h4>
+          <p>El reporte se genera automáticamente en cuestión de minutos después de confirmar el pago. Recibirás un enlace en tu correo para descargarlo.</p>
+        </div>
+        <div class="faq-item">
+          <h4>¿Puedo verificar más de una marca a la vez? <span>+</span></h4>
+          <p>Por ahora cada búsqueda es independiente. Si necesitas verificar múltiples marcas o variantes, contáctanos para un plan personalizado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Verificador de Marcas. Hecho en Perú 🇵🇪</p>
+      <p style="margin-top:8px;">Contacto: <a href="mailto:hola@verificadordemarcas.pe">hola@verificadordemarcas.pe</a></p>
+      <div class="disclaimer">
+        <strong>Aviso legal:</strong> Este servicio es una guía informativa y no constituye asesoría legal. Para el registro formal de tu marca, consulta con un abogado especializado en propiedad intelectual colegiado en el Perú. INDECOPI es la única entidad competente para otorgar registros de marca.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
